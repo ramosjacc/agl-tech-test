@@ -16,7 +16,7 @@ namespace JoseRamos.Agl.Site
 
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterAssemblyTypes(AppDomain.CurrentDomain.GetAssemblies())
-                .Where(t => t.Name.EndsWith("Service"))
+                .Where(t => t.Name.EndsWith("Provider") || t.Name.EndsWith("Client"))
                 .AsImplementedInterfaces();
 
             var container = builder.Build();

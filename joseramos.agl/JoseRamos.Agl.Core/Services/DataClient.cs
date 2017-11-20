@@ -1,4 +1,4 @@
-﻿using JoseRamos.Agl.Core.Interfaces;
+﻿using JoseRamos.Agl.Core.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using JoseRamos.Agl.Core.Models;
 
 namespace JoseRamos.Agl.Core.Services
 {
@@ -19,6 +20,15 @@ namespace JoseRamos.Agl.Core.Services
         {
             _cacheProvider = cacheProvider;
             BaseUrl = new Uri(ConfigurationManager.AppSettings["baseUrl"]);
+        }
+
+        public List<Person> GetPetOwnerListing()
+        {
+            return _cacheProvider.GetOrSet<List<Person>>("pet_listing", () => {
+                RestRequest request = new RestRequest(ConfigurationManager.AppSettings["jsonApi"], Method.GET);
+                var response = Execute<List<Person>>(request);
+                return response.Data;
+            });
         }
 
 

@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JoseRamos.Agl.Core.Interfaces
+namespace JoseRamos.Agl.Core.Models
 {
     public interface ICacheProvider
     {
-        void Get();
-        void Set();
+        T GetOrSet<T>(string cacheKey, Func<T> getItemCallback) where T : class;
 
     }
 }

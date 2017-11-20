@@ -1,4 +1,4 @@
-﻿using JoseRamos.Agl.Core.Interfaces;
+﻿using JoseRamos.Agl.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +11,17 @@ namespace JoseRamos.Agl.Site.Controllers
     public class HomeController : AsyncController
     {
         private readonly IDataClient _dataClient;
-        private readonly ISortingProvider _ownerInfoService;
+        private readonly ISortingProvider _sortingProvider;
 
-        public HomeController(ISortingProvider ownerInfoService)
+        public HomeController(ISortingProvider sortingProvider, IDataClient dataClient)
         {
-            _ownerInfoService = ownerInfoService;
+            _dataClient = dataClient;
+            _sortingProvider = sortingProvider;
         }
-        public ActionResult Index()
+        public ActionResult Index()     
         {
-            return View();
+            var result = _dataClient.GetPetOwnerListing();
+            return View(result);
         }
 
         public ActionResult About()
