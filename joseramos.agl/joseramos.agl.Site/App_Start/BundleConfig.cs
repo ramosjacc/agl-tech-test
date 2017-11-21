@@ -20,12 +20,14 @@ namespace JoseRamos.Agl.Site
                         "~/Content/js/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                "~/Content/js/popper.js",
                       "~/Content/js/bootstrap.js",
                       "~/Content/js/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/cssbundle").Include(
                       "~/Content/css/bootstrap.css",
-                      "~/Content/css/site.css"));
+                      "~/Content/css/site.css",
+                      "~/Content/css/main-content.css"));
         }
     }
 }

@@ -183,6 +183,8 @@
   <ItemGroup>
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\main-content.css" />
+    <Content Include="Content\js\popper.js" />
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -203,6 +205,7 @@
     <Content Include="Content\js\modernizr-2.6.2.js" />
     <Content Include="Content\js\respond.js" />
     <Content Include="Content\js\respond.min.js" />
+    <Content Include="gulpfile.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -215,9 +218,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="package.json" />
+    <Content Include="Content\sass\main-content.scss" />
+    <None Include="Properties\PublishProfiles\agl-jose-ramos-test - Web Deploy.pubxml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\sass\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

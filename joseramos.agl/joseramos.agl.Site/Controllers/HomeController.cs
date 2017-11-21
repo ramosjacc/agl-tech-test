@@ -1,4 +1,5 @@
 ﻿using JoseRamos.Agl.Core.Models;
+using JoseRamos.Agl.Core.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,24 +19,12 @@ namespace JoseRamos.Agl.Site.Controllers
             _dataClient = dataClient;
             _sortingProvider = sortingProvider;
         }
-        public ActionResult Index()     
+        public ActionResult Index()
         {
             var result = _dataClient.GetPetOwnerListing();
-            return View(result);
-        }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            var filteredResult = _sortingProvider.SortAndFilter(result, Animal.Cat);
+            return View(filteredResult);
         }
     }
 }

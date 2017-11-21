@@ -51,6 +51,7 @@
     <Compile Include="Interfaces\ICacheProvider.cs" />
     <Compile Include="Interfaces\IDataClient.cs" />
     <Compile Include="Interfaces\ISortingProvider.cs" />
+    <Compile Include="Models\OwnerSortResult.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Pet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

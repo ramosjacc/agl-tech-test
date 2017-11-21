@@ -1,9 +1,10 @@
 ﻿namespace JoseRamos.Agl.Core.Models.Enums
 {
-    enum Animal
+    public enum Animal
     {
         Dog,
         Cat,
+        Fish,
         Emu
     }
 }
