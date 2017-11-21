@@ -222,9 +222,7 @@
     <Content Include="Content\sass\main-content.scss" />
     <None Include="Properties\PublishProfiles\agl-jose-ramos-test - Web Deploy.pubxml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>

@@ -12,6 +12,8 @@ namespace JoseRamos.Agl.Core.Services
     {
         public List<OwnerSortResult> SortAndFilter(List<Person> list, Animal type)
         {
+            if (list == null) return null;
+
             var group = list.GroupBy(p => p.Gender);
 
             var results = group.Select(c => new OwnerSortResult { Gender = c.Key,

@@ -1,15 +1,12 @@
 ﻿using JoseRamos.Agl.Core.Models;
 using JoseRamos.Agl.Core.Models.Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace JoseRamos.Agl.Site.Controllers
 {
 
-    public class HomeController : AsyncController
+    public class HomeController : Controller
     {
         private readonly IDataClient _dataClient;
         private readonly ISortingProvider _sortingProvider;
@@ -21,10 +18,21 @@ namespace JoseRamos.Agl.Site.Controllers
         }
         public ActionResult Index()
         {
-            var result = _dataClient.GetPetOwnerListing();
+            try
+            {
+                var result = _dataClient.GetPetOwnerListing();
 
-            var filteredResult = _sortingProvider.SortAndFilter(result, Animal.Cat);
-            return View(filteredResult);
+                var filteredResult = _sortingProvider.SortAndFilter(result, Animal.Cat);
+
+                //Normally you would use a separate viewmodel 
+                return View(filteredResult);
+            }
+            catch (Exception e)
+            {
+                //log to diagnostics
+                System.Diagnostics.Trace.TraceError(e.Message);
+                throw;
+            }
         }
     }
 }
