@@ -16,7 +16,7 @@ namespace JoseRamos.Agl.Core.Services
             if (item == null)
             {
                 item = getItemCallback();
-                MemoryCache.Default.Add(cacheKey, item, DateTime.Now.AddMinutes(30));
+                if(item != null) MemoryCache.Default.Add(cacheKey, item, DateTime.Now.AddMinutes(30));
             }
             return item;
         }
