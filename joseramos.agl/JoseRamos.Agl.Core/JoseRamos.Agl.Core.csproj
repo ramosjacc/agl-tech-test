@@ -55,7 +55,7 @@
     <Compile Include="Models\Pet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CacheProvider.cs" />
-    <Compile Include="Services\DataClient.cs" />
+    <Compile Include="Services\OwnerDataClient.cs" />
     <Compile Include="Services\SortingProvider.cs" />
   </ItemGroup>
   <ItemGroup>

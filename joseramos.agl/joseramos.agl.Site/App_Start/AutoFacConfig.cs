@@ -21,7 +21,7 @@ namespace JoseRamos.Agl.Site
             //    .Where(t => t.Name.EndsWith("Provider") && t.Name.EndsWith("Client"))
             //    .AsImplementedInterfaces();
 
-            builder.RegisterType<DataClient>().As<IDataClient>();
+            builder.RegisterType<OwnerDataClient>().As<IDataClient>();
             builder.RegisterType<SortingProvider>().As<ISortingProvider>();
             builder.RegisterType<CacheProvider>().As<ICacheProvider>();
 

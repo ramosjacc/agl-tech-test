@@ -7,14 +7,14 @@ using System.Configuration;
 namespace JoseRamos.Agl.Core.Services
 {
 
-    public class DataClient: RestClient, IDataClient
+    public class OwnerDataClient: RestClient, IDataClient
     {
         private readonly ICacheProvider _cacheProvider;
+        public override Uri BaseUrl { get => base.BaseUrl; set => base.BaseUrl = value; }
 
-        public DataClient(ICacheProvider cacheProvider)
+        public OwnerDataClient(ICacheProvider cacheProvider)
         {
             _cacheProvider = cacheProvider;
-            BaseUrl = new Uri(ConfigurationManager.AppSettings["baseUrl"]);
         }
 
         public List<Person> GetPetOwnerListing()

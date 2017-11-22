@@ -10,6 +10,8 @@ namespace JoseRamos.Agl.Core.Models
 {
     public interface IDataClient
     {
+        Uri BaseUrl { get; set; }
+
         List<Person> GetPetOwnerListing();
     }
 }
